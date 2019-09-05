@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.fournisseur._id ? 'Edit Fournisseur' : 'New Fournisseur'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.fournisseurForm" class="form-horizontal" ng-submit="vm.save(vm.form.fournisseurForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.fournisseur.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.fournisseurForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Fournisseur name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.fournisseur._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

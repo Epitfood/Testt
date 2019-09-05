@@ -1,0 +1,33 @@
+<section class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
+      <form name="vm.userForm" ng-submit="vm.updateUserProfile(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+        <fieldset>
+          <div class="form-group" show-errors>
+            <label for="providerName">Provider's Name</label>
+            <input type="text" id="providerName" name="providerName" class="form-control" ng-model="vm.user.providerName" placeholder="Provider Name" required autofocus>
+            <div ng-messages="vm.userForm.firstName.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Provider's name is required.</p>
+            </div>
+          </div>
+          <div class="form-group" show-errors>
+            <label for="providerAdresse">Provider's Adresse</label>
+            <input type="text" id="providerAdresse" name="providerAdresse" class="form-control" ng-model="vm.user.providerAdresse" placeholder="Provider Adresse" required autofocus>
+            <div ng-messages="vm.userForm.firstName.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Provider's Adresse is required.</p>
+            </div>
+          </div>
+          <div class="form-group" show-errors>
+            <label for="providerSiret">Provider's Siret Code</label>
+            <input type="text" id="providerSiret" name="providerSiret" class="form-control" ng-model="vm.user.providerSiret" placeholder="Provider Siret" required autofocus>
+            <div ng-messages="vm.userForm.firstName.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Provider's Siret Code is required.</p>
+            </div>
+          </div>
+          <div class="text-center form-group">
+            <button type="submit" class="btn btn-danger">Save Profile</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+  

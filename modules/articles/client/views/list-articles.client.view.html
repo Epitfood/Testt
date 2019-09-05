@@ -1,0 +1,29 @@
+<section>
+  <div class="page-header">
+    <h1>Articles
+            <a class="btn btn-success pull-right" data-ui-sref="shopping-cart">Epifood Card
+              <i class="glyphicon glyphicon-shopping-cart"></i>
+            </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <div ng-repeat="article in vm.articles" ng-if="article.availability" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="article.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="article.user" ng-bind="article.user.displayName"></span>
+        <span ng-if="!article.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+      <p class="list-group-item-text">{{article.price}} &euro;</p>
+      <p class="list-group-item-text">{{article.amount}} in store</p>
+      <a ui-sref="articles.view({ articleId: article._id })">
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-info-sign"></i></button>
+      </a>
+        <div class="form-group" ng-if="article.amount">
+          <button type="submit" class="btn btn-primary">Add one to my <i class="glyphicon glyphicon-shopping-cart"></i></button>
+        </div>
+      </div>
+  </div>
+</section>
